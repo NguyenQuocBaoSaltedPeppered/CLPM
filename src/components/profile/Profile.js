@@ -29,7 +29,6 @@ export default function Profile({ islogin , onLogout }) {
             {islogin === true ? (<>
                 <Mybutton onclick={onLogout} label='Đăng xuất' />
             </>) : (<></>)}
-            
         </div>
     );
 }

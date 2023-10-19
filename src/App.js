@@ -1,60 +1,25 @@
-import './App.css';
-import DemoIcon from './components/icon/DemoIcon';
-import Profile from './components/profile/Profile';
-import { useState } from 'react';
-import LoginForm from './components/loginForm/LoginForm';
-import { Requirements } from 'cs-erp-theme'
+// import { useState } from 'react';
+// import FilterableProductTable from './components/products/FilterableProductTable';
+// import TodoList from './components/TodoList/TodoList';
+// import Gallery from './components/profile/Gallery';
+// import { Profilev2 } from './components/profile/Profilev2';
+// import Toolbar from "./components/toolbar/Toolbar";
 
-function App() {
-  const [islogin, setLogin] = useState(false);
-  const [count, setCount] = useState(0);
+import Gallery from "./components/gallery/Gallery";
 
-  function handleClick() {
-    setCount(count + 1);
-  }
-  const handleClickClear = () => {
-    setCount(0);
-  }
-  const demoIcons = Array.from({ length: count }, (_, index) => (
-    <DemoIcon key={index} />
-  ));
+// const PRODUCTS = [
+//   {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
+//   {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit"},
+//   {category: "Fruits", price: "$2", stocked: false, name: "Passionfruit"},
+//   {category: "Vegetables", price: "$2", stocked: true, name: "Spinach"},
+//   {category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin"},
+//   {category: "Vegetables", price: "$1", stocked: true, name: "Peas"}
+// ];
 
-  return (
-    <div className="App">
-      <h1> Welcome  to My app</h1>
-      <Requirements/>
-      <div style={{ display: 'flex', justifyContent: 'center', padding: 10 , minHeight: 150}}>
-        <div className='container' >
-          {islogin ? (<Profile islogin={islogin} onLogout={(e) => setLogin(false) }/>) : (<LoginForm login={islogin} onchangeLogin={(e) => setLogin(e)} />)}
+export default function App() {
+    return (
+        <div>
+            <Gallery/>
         </div>
-      </div>
-
-      <div style={{ marginTop: 50, display: 'flex', justifyContent: 'center', minHeight: 300, flexWrap: 'wrap' }}>
-        {demoIcons}
-      </div>
-
-      <div style={{ width: 200, margin: 'auto', padding: 'auto'}}>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
-          <button onClick={handleClick}>
-            Clicked {count} times
-          </button>
-
-          <button onClick={handleClickClear}>
-            Clear
-          </button>
-        </div>
-      </div>
-
-
-
-      {/* <Loader /> */}
-      {/* <DemoIcon />
-        <DemoIcon />
-        <DemoIcon />
-        <DemoIcon /> */}
-
-    </div>
-  );
+    );
 }
-
-export default App;
